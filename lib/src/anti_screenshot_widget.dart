@@ -15,7 +15,7 @@ class AntiScreenshotWidget extends StatefulWidget {
   final double blurIntensity;
 
   const AntiScreenshotWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.enabled = true,
     this.overlayColor,
@@ -25,7 +25,7 @@ class AntiScreenshotWidget extends StatefulWidget {
     this.hideDelay = const Duration(milliseconds: 300),
     this.blurBackground = true,
     this.blurIntensity = 5.0,
-  }) : super(key: key);
+  });
 
   @override
   State<AntiScreenshotWidget> createState() => _AntiScreenshotWidgetState();
@@ -34,7 +34,7 @@ class AntiScreenshotWidget extends StatefulWidget {
 class _AntiScreenshotWidgetState extends State<AntiScreenshotWidget>
     with WidgetsBindingObserver {
   bool _isProtected = false;
-  bool _isAppInBackground = false;
+  bool isAppInBackground = false;
 
   @override
   void initState() {
@@ -73,7 +73,7 @@ class _AntiScreenshotWidgetState extends State<AntiScreenshotWidget>
     if (protected != _isProtected) {
       setState(() {
         _isProtected = protected;
-        _isAppInBackground = protected;
+        isAppInBackground = protected;
       });
 
       if (protected) {

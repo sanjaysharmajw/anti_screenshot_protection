@@ -10,13 +10,13 @@ class BlurProtection extends StatefulWidget {
   final Duration animationDuration;
 
   const BlurProtection({
-    Key? key,
+    super.key,
     required this.child,
     this.enabled = true,
     this.blurSigma = 10.0,
     this.overlayColor = Colors.transparent,
     this.animationDuration = const Duration(milliseconds: 300),
-  }) : super(key: key);
+  });
 
   @override
   State<BlurProtection> createState() => _BlurProtectionState();
@@ -87,9 +87,10 @@ class _BlurProtectionState extends State<BlurProtection>
                     sigmaY: _blurAnimation.value,
                   ),
                   child: Container(
-                    color: widget.overlayColor.withOpacity(
-                      _blurAnimation.value / widget.blurSigma * 0.3,
+                    color: widget.overlayColor.withValues(
+                      alpha: (_blurAnimation.value / widget.blurSigma * 0.3),
                     ),
+
                   ),
                 ),
               ),

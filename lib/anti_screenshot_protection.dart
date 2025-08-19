@@ -1,4 +1,4 @@
-library anti_screenshot_protection;
+library;
 
 export 'src/anti_screenshot_widget.dart';
 export 'src/secure_overlay.dart';

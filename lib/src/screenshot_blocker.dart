@@ -9,13 +9,13 @@ class ScreenshotBlocker extends StatefulWidget {
   final VoidCallback? onBlockedAttempt;
 
   const ScreenshotBlocker({
-    Key? key,
+    super.key,
     required this.child,
     this.blockOnLongPress = true,
     this.blockOnDoubleTap = false,
     this.showFeedback = true,
     this.onBlockedAttempt,
-  }) : super(key: key);
+  });
 
   @override
   State<ScreenshotBlocker> createState() => _ScreenshotBlockerState();

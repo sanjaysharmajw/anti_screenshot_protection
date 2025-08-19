@@ -10,13 +10,13 @@ class SecureOverlay extends StatelessWidget {
   final double blurIntensity;
 
   const SecureOverlay({
-    Key? key,
+    super.key,
     this.overlayColor,
     this.warningMessage,
     this.customWarningWidget,
     this.blurBackground = true,
     this.blurIntensity = 5.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -13,13 +13,13 @@ class SecureText extends StatefulWidget {
 
   const SecureText(
     this.text, {
-    Key? key,
+    super.key,
     this.style,
     this.hideWhenInactive = true,
     this.hiddenText = '••••••••',
     this.hideDelay = const Duration(seconds: 10),
     this.preventSelection = true,
-  }) : super(key: key);
+  });
 
   @override
   State<SecureText> createState() => _SecureTextState();
